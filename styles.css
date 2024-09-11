@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    color: #00ff00;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000;
+    border: 1px solid #00ff00;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #00ff00;
+    animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+    50% {
+        box-shadow: 0 0 5px #00ff00, 0 0 15px #00ff00, 0 0 25px #00ff00;
+    }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #00ff00;
+    transition: transform 0.5s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #00ff00;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #00ff00;
+}
+
+.info p, .section p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    position: relative;
+}
+
+.info p::after, .section p::after {
+    content: "█";  /* Barra de terminal */
+    margin-left: 5px;
+    color: #00ff00;
+    animation: blink 1s step-start infinite;
+    position: absolute;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 5px 0;
+    padding-left: 10px;
+    position: relative;
+}
+
+ul li::before {
+    content: "> ";
+    color: #00ff00;
+    position: absolute;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #00ff00;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #000;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    animation: flicker 1s infinite;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #00ff00;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .info p, .section p {
+        font-size: 1em;
+    }
+
+    ul li {
+        font-size: 0.95em;
+    }
+
+    .download-btn {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+}
