@@ -8,11 +8,12 @@ body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #000;
     color: #00ff00;
+    line-height: 1.5;
 }
 
 .container {
     width: 80%;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
     background-color: #000;
     border: 1px solid #00ff00;
@@ -35,20 +36,6 @@ header {
     margin-bottom: 20px;
 }
 
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border: 2px solid #00ff00;
-    transition: transform 0.5s ease;
-}
-
-.profile-pic:hover {
-    transform: scale(1.1);
-}
-
 h1 {
     font-size: 2.5em;
     color: #00ff00;
@@ -59,45 +46,28 @@ h2 {
     color: #00ff00;
 }
 
-.info p, .section p {
-    margin: 10px 0;
+.info, .section {
+    margin-bottom: 20px;
+}
+
+.section p, .info p {
+    margin-bottom: 10px;
     font-size: 1.1em;
     position: relative;
 }
 
-.info p::after, .section p::after {
-    content: "█";  /* Barra de terminal */
-    margin-left: 5px;
-    color: #00ff00;
-    animation: blink 1s step-start infinite;
-    position: absolute;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
-}
-
-.section {
-    margin-bottom: 20px;
-}
-
-ul {
+.section ul {
     list-style: none;
-    padding-left: 0;
 }
 
-ul li {
+.section ul li {
     margin: 5px 0;
     padding-left: 10px;
-    position: relative;
 }
 
 ul li::before {
     content: "> ";
     color: #00ff00;
-    position: absolute;
 }
 
 .download-btn {
@@ -107,7 +77,6 @@ ul li::before {
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    font-size: 1.1em;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -128,7 +97,6 @@ footer {
 @media (max-width: 768px) {
     .container {
         width: 95%;
-        padding: 10px;
     }
 
     h1 {
@@ -137,19 +105,6 @@ footer {
 
     h2 {
         font-size: 1.2em;
-    }
-
-    .profile-pic {
-        width: 120px;
-        height: 120px;
-    }
-
-    .info p, .section p {
-        font-size: 1em;
-    }
-
-    ul li {
-        font-size: 0.95em;
     }
 
     .download-btn {
